@@ -9,10 +9,10 @@
 using namespace std;
 
 int main(void) {
-	char str1[30] = "Yeeun";
-	int len = strlen(str1);
+	string str1 = "Yeeun";
 
-	printf("문자열의 길이는 %d \n", len);
+	// str1.length()도 가능하나 size()를 권장
+	cout << "문자열의 길이는 " << str1.size() << endl;
 
 	return 0; 
 }
