@@ -11,7 +11,7 @@ using namespace std;
 int main(void) {
 	string str1 = "Hello";
 	string str2 = "World";
-	
+
 	if (str1 == str2) {
 		cout << "str1 == str2";
 	}
@@ -21,9 +21,8 @@ int main(void) {
 	}
 
 	else {
-		cout<< "str1 > str2";
+		cout << "str1 > str2";
 	}
-
 
 	return 0;
 }
