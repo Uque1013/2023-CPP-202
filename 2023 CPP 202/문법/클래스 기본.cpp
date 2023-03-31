@@ -21,6 +21,16 @@ public :
 	string tel;
 	string sub;
 	string address;
+
+	void print() {
+		cout << "학생기본정보\n " << endl;
+		cout << "학생 학번 :  " << hakbun << endl;
+		cout << "학생 이름 : " << name << endl;
+		cout << "학생 전화번호 :" << tel << endl;
+		cout << "학생 학과 :  " << sub << endl;
+		cout << "학생 주소 : " << address << endl;
+	}
+
 };	
 
 int main(void) {
@@ -32,12 +42,7 @@ int main(void) {
 	학생1.sub = "뉴미디어소프트웨어과";
 	학생1.address = "서울시 관악구";
 
-	cout << "학생기본정보\n " << endl;
-	cout << "학생 학번 :  " << 학생1.hakbun << endl;
-	cout << "학생 이름 : " << 학생1.name << endl;
-	cout << "학생 전화번호 :" << 학생1.tel << endl;
-	cout << "학생 학과 :  " << 학생1.sub << endl;
-	cout << "학생 주소 : " << 학생1.address << endl;
+	학생1.print();
 
 	return 0;
 }
