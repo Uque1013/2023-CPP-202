@@ -16,7 +16,7 @@ class Student {
 public:
 	// 생성자(constructor) : 객체를 생성할 때 호출되는 함수
 	// 생성자를 정의하지 않으면 default로 매개변수가 없는 생성자가 정의된다
-	Student() {
+	Student( ) {
 		hakbun = 2204;
 		name = "김예은";
 		tel = "010-1234-5678";
@@ -33,6 +33,16 @@ public:
 		cout << "학생 학과 :  " << sub << endl;
 		cout << "학생 주소 : " << address << endl; 
 	}
+
+public : 
+	Student(int _hakbun, string _name, string _tel, string _sub, string _address) {
+		hakbun = _hakbun;
+		name = _name;
+		tel = _tel;
+		sub = _sub;
+		address = _address;
+	}
+
 private:
 	// 성능때문에 hakbun을 문자열로 하지 않음
 	// 일반적으로 문자열은 정수형 데이터보다 많은 메모리 공간을 요구하며
@@ -45,11 +55,13 @@ private:
 };
 
 int main(void) {
-	// 자료형 : Student(class 생략가능)
-	Student 학생1;
+	// 매개변수가 없는 생성자
+	// Student 학생1;
+	Student 학생1 = Student();
+	// 학생1.print();
 
-
-	학생1.print();
+	Student 학생2 = Student(1004, "이용복", "010-0000-0000", "뉴미디어소프트웨어", "호주");
+	학생2.print();
 
 	return 0;
 }
