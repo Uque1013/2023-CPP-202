@@ -22,6 +22,10 @@ public :
 	string sub;
 	string address;
 
+	// 생성자(constructor) : 객체를 생성할 때 호출되는 함수
+	// 생성자를 정의하지 않으면 default로 매개변수가 없는 생성자가 정의된다
+
+	// class 멤버 함수를 가질 수 있다
 	void print() {
 		cout << "학생기본정보\n " << endl;
 		cout << "학생 학번 :  " << hakbun << endl;
