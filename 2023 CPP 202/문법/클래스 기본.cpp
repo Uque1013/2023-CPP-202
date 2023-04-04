@@ -8,6 +8,11 @@
 
 using namespace std;
 
+struct Person {
+	int height;
+	int weight;
+
+};
 // 여러  data들을 하나의 의미있는 구조체로 묶어서 관리
 // 구조체, 클래스는 일반적으로 단어의 첫 글자를 대문자로 함
 // class는 디폴트 private (struct는 디폴트가 public)
@@ -61,7 +66,16 @@ int main(void) {
 	// 학생1.print();
 
 	Student 학생2 = Student(1004, "이용복", "010-0000-0000", "뉴미디어소프트웨어", "호주");
-	학생2.print();
+	// 학생2.print();
+
+	struct Person p;
+	p.height = 180;
+	p.weight = 56;
+
+	struct Person* ptr = &p;
+
+	cout << "키 : " << (*ptr).height << endl; 
+	cout << "몸무게 : " << (*ptr).weight << endl;
 
 	return 0;
 }
