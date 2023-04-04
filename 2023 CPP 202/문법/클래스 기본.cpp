@@ -24,6 +24,15 @@ public:
 		address = "서울시 관악구";
 	}
 
+	// class 멤버 함수를 가질 수 있다
+	void print() {
+		cout << "학생기본정보\n " << endl;
+		cout << "학생 학번 :  " << hakbun << endl;
+		cout << "학생 이름 : " << name << endl;
+		cout << "학생 전화번호 :" << tel << endl;
+		cout << "학생 학과 :  " << sub << endl;
+		cout << "학생 주소 : " << address << endl; 
+	}
 private:
 	// 성능때문에 hakbun을 문자열로 하지 않음
 	// 일반적으로 문자열은 정수형 데이터보다 많은 메모리 공간을 요구하며
@@ -33,17 +42,6 @@ private:
 	string tel;
 	string sub;
 	string address;
-
-	// class 멤버 함수를 가질 수 있다
-	void print() {
-		cout << "학생기본정보\n " << endl;
-		cout << "학생 학번 :  " << hakbun << endl;
-		cout << "학생 이름 : " << name << endl;
-		cout << "학생 전화번호 :" << tel << endl;
-		cout << "학생 학과 :  " << sub << endl;
-		cout << "학생 주소 : " << address << endl;
-	}
-
 };
 
 int main(void) {
