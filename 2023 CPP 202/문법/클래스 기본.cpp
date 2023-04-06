@@ -8,11 +8,6 @@
 
 using namespace std;
 
-struct Person {
-	int height;
-	int weight;
-
-};
 // 여러  data들을 하나의 의미있는 구조체로 묶어서 관리
 // 구조체, 클래스는 일반적으로 단어의 첫 글자를 대문자로 함
 // class는 디폴트 private (struct는 디폴트가 public)
@@ -40,12 +35,12 @@ public:
 	}
 
 public : 
-	Student(int _hakbun, string _name, string _tel, string _sub, string _address) {
-		hakbun = _hakbun;
-		name = _name;
-		tel = _tel;
-		sub = _sub;
-		address = _address;
+	Student(int hakbun, string name, string tel, string sub, string address) {
+		this->hakbun = hakbun;
+		this->name = name;
+		this->tel = tel;
+		this->sub = sub;
+		this->address = address;
 	}
 
 private:
@@ -66,17 +61,7 @@ int main(void) {
 	// 학생1.print();
 
 	Student 학생2 = Student(1004, "이용복", "010-0000-0000", "뉴미디어소프트웨어", "호주");
-	// 학생2.print();
-
-	struct Person p;
-	p.height = 180;
-	p.weight = 56;
-
-	struct Person* ptr = &p;
-
-	// 둘 다 같은 결과
-	cout << "키 : " << ptr->height << endl; 
-	cout << "몸무게 : " << (*ptr).weight << endl;
-
+	학생2.print();
+		
 	return 0;
 }
