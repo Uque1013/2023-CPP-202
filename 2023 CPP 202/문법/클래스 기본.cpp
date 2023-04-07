@@ -35,9 +35,9 @@ public:
 	}
 
 public : 
-	Student(int hakbun, string name, string tel, string sub, string address)
-		//
-		: hakbun(hakbun), name(name), tel(tel), sub(sub), address(address)
+	Student(int _hakbun, string _name, string _tel, string _sub, string _address)
+		// 멤버변수 초기화, const/참조형 멤버변수 사용 가능	
+		: hakbun(_hakbun), name(_name), tel(_tel), sub(_sub), address(_address)
 	{
 		
 	}
@@ -59,8 +59,13 @@ int main(void) {
 	Student 학생1 = Student();
 	// 학생1.print();
 
-	Student 학생2 = Student(1004, "이용복", "010-0000-0000", "뉴미디어소프트웨어", "호주");
-	학생2.print();
+	// 정적할당
+	//Student 학생2 = Student(1004, "이용복", "010-0000-0000", "뉴미디어소프트웨어", "호주");
+	//학생2.print();
+	
+	//동적할당된 공간은 포인터로 접근한다
+	Student* 학생3 = new Student(1004, "용복", "010-0000-0000", "kpop", "호주");
+	학생3->print();
 		
 	return 0;
 }
