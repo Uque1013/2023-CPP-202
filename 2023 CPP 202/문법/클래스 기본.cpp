@@ -35,12 +35,11 @@ public:
 	}
 
 public : 
-	Student(int hakbun, string name, string tel, string sub, string address) {
-		this->hakbun = hakbun;
-		this->name = name;
-		this->tel = tel;
-		this->sub = sub;
-		this->address = address;
+	Student(int hakbun, string name, string tel, string sub, string address)
+		//
+		: hakbun(hakbun), name(name), tel(tel), sub(sub), address(address)
+	{
+		
 	}
 
 private:
