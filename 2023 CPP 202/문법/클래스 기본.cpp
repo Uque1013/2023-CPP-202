@@ -18,11 +18,7 @@ public:
 	// 생성자는 반환형을 쓰지 않는다.
 	// 생성자를 정의하지 않으면 default로 매개변수가 없는 생성자가 정의된다
 	Student( ) {
-		hakbun = 2204;
-		name = "김예은";
-		tel = "010-1234-5678";
-		sub = "뉴미디어소프트웨어과";
-		address = "서울시 관악구";
+		
 	}
 
 	// class 멤버 함수를 가질 수 있다
@@ -35,6 +31,12 @@ public:
 		cout << "학생 주소 : " << address << endl; 
 	}
 
+	void set_hakbun(int _hakbun) { hakbun = _hakbun; }
+	void set_name(string _name) { name = _name; }
+	void set_tel(string _tel) { tel = _tel; }
+	void set_sub(string _sub) {sub = _sub; }
+	void set_address(string _address) { address = _address; }
+	
 public : 
 	Student(int _hakbun, string _name, string _tel, string _sub, string _address)
 		// 멤버변수 초기화, const/참조형 멤버변수 사용 가능	
@@ -64,11 +66,11 @@ int main(void) {
 	//Student 학생2 = Student(1004, "이용복", "010-0000-0000", "뉴미디어소프트웨어", "호주");
 	//학생2.print();
 
-	Student 학생3[2];
+	/*Student 학생3[2];
 	
 	for (int i = 0; i < 2; i++) {
 		학생3[i].print();
-	}
+	}*/
 
 	// 동적할당 : 실행시간(runtime)에 메모리 크기가 결정(메모리 heap영역)
 	//동적할당된 공간은 포인터로 접근한다
@@ -79,6 +81,18 @@ int main(void) {
 	//delete 학생3;
 
 	Student* 학생4 = new Student[2];
+	학생4[0].set_name("이용복");
+	학생4[0].set_address("호주");
+	학생4[0].set_hakbun(1004);
+	학생4[0].set_sub("댄스라차");
+	학생4[0].set_tel("000-0000-0000");
+
+	학생4[1].set_name("최범규");
+	학생4[1].set_address("서울");
+	학생4[1].set_hakbun(313);
+	학생4[1].set_sub("천사");
+	학생4[1].set_tel("000-0000-0001");
+
 
 	for (int i = 0; i < 2; i++) {
 		학생4[i].print();		// 배열의 요소에 해당하는 객체는 멤버를 .으로 접근
