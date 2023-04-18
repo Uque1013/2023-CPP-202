@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string.h>
 
 using namespace std;
 
@@ -8,9 +9,10 @@ public :
 
 	MString(const char* str) 
 	{
-		cout << "문자 : " << c_str() << endl;
-		size_ = strlen(str);
-		c_str_= new char[size_ + 1];
+		unsigned int l = strlen(str);
+		c_str_ = new char[l+1];		// '\0' (널문자(가 들어갈 공간 +1
+		strcpy(c_str_, str);
+		size_ = l;
 	}
 
 public:
