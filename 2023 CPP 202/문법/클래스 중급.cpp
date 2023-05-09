@@ -6,7 +6,7 @@ using namespace std;
 class MString {
 
 public :
-
+	// 일반생성자
 	MString(const char* str) 
 	{
 		unsigned int l = strlen(str);
@@ -14,6 +14,13 @@ public :
 		strcpy(c_str_, str);
 		size_ = l;
 		cout << "MString 생성자 호출 완료" << endl;
+	}
+
+	// 복사생성자
+	MString(const MString& rhs)
+		: c_str_(rhs.c_str_), size_(rhs.size_)
+	{
+		cout << "복사생성자 호출" << endl;
 	}
 
 	// 소멸자(destructor)
@@ -34,9 +41,11 @@ private:
 };
 
 int main(void) {
-	// 생성자가 호출되면서 "I will be back" 만큼의 동적할당이 이뤄짐
+	// 일반생성자 호출
 	MString str = MString("I will be back");
-	cout << str.c_str() << endl;
+
+	// 복사생성자 호출
+	MString str2 = str;
 
 	return 0;
 }
