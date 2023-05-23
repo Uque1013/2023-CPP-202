@@ -20,7 +20,8 @@ int main(void)
 
 	RectangleShape apple;
 	apple.setFillColor(Color::Red);
-	apple.setPosition(0, 0);
+	// 640에 50을 뺀 이유는 사과가 화면 밖에 벗어나지 않게 하기 위함
+	apple.setPosition(rand() % (640 - 50), rand() % (480 - 50));
 	apple.setSize(Vector2f(50, 50));
 
 	while (window.isOpen())
@@ -41,6 +42,11 @@ int main(void)
 			snake.move(0, -5);
 		if (Keyboard::isKeyPressed(Keyboard::Down))
 			snake.move(0, 5);
+		
+		// 뱀이 사과를 먹었을 때,
+		if (snake.getGlobalBounds().intersects(apple.getGlobalBounds())) {
+			apple.setPosition(rand() % (640 - 50), rand() % (480 - 50));
+		}
 
 		window.clear();
 
