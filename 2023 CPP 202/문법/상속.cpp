@@ -9,9 +9,10 @@ public:
 		cout << "동물 생성자" << endl;
 	}
 	~Animal() { cout << "동물 소멸자" << endl; }
-	void Bark(void) { cout << "동물 짖는다" << endl; }
-	void Eat(void) { cout << "동물 먹는다" << endl; }
-	void Hunt(void) { cout << "동물 사냥한다" << endl; }
+	// 동적 바인딩(동적함수)
+	virtual void Bark(void) { cout << "동물 짖는다" << endl; }
+	virtual void Eat(void) { cout << "동물 먹는다" << endl; }
+	virtual void Hunt(void) { cout << "동물 사냥한다" << endl; }
 
 private:
 	int age_;
@@ -44,7 +45,7 @@ int main(void) {
 	delete animal;
 
 	animal = new Crane(3, "지우", 108);	
-	animal->Bark();		// 동물 짖는다(정적 바인딩으로 인해 부모의 멤버함수를 호출)
+	animal->Bark();		// 두루두루
 
 	delete animal;
 	return 0;
