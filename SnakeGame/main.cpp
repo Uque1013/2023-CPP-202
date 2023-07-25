@@ -103,6 +103,20 @@ int main(void)
 	// Frame Per Second를 60으로 조절
 	window.setFramerateLimit(15);
 
+	Font font;
+	if (!font.loadFromFile("C:\\Windows\\Fonts\\arial.ttf"))
+	{
+		printf("폰트 불러오기 실패");
+		return -1;
+	}
+
+	Text text_info;
+	text_info.setFont(font);
+	text_info.setColor(Color::Magenta);
+	text_info.setCharacterSize(20);
+
+	char t_info_buf[100];
+
 	Snake snake = Snake(DIR_DOWN, 1);
 	snake.InitBody();
 
