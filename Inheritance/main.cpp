@@ -6,10 +6,11 @@ using namespace sf;
 
 class Entity {
 public:
+
 	// 왠만하면 클래스를 매개변수로 할 때 99.99%는 주소값으로 넘기자
 	// 메모리 용량을 줄일 수 있다. call by value를 피하기 위해
-	Entity(int life, int speed, RectangleShape* sprite) :
-		life_(life), speed_(speed), sprite_(sprite) 
+	Entity(int life, int speed, RectangleShape* sprite)
+		: life_(life), speed_(speed), sprite_(sprite)
 	{
 	}
 
@@ -20,7 +21,7 @@ public:
 		sprite_->move(x, y);
 	}
 
-	void eat() {}
+	virtual void eat(Entity* p) {}
 
 	// getter
 	int get_life(void) { return life_; }
@@ -40,10 +41,13 @@ private:
 
 class Player : public Entity {
 public:
-	Player(int life, int speed, RectangleShape* sprite, int score) : 
-		Entity(life, speed, sprite), score_(score)
-	{
+	Player(int life, int speed, RectangleShape* sprite, int score)
+		: Entity(life, speed, sprite), score_(score)
+	{}
 
+	void eat(Entity* e) override
+	{
+		e->set_life(0);
 	}
 
 private:
@@ -52,11 +56,9 @@ private:
 
 class Enemy : public Entity {
 public:
-	Enemy(int life, int speed, RectangleShape* sprite, int life_time) : 
-		Entity(life, speed, sprite), life_time_(life_time) 
-	{
-
-	}
+	Enemy(int life, int speed, RectangleShape* sprite, int life_time)
+		: Entity(life, speed, sprite), life_time_(life_time)
+	{}
 
 private:
 	int life_time_;
@@ -79,10 +81,9 @@ int main(void)
 	e1.setPosition(rand() % 800, rand() % 600);
 	e1.setSize(Vector2f(40, 40));
 
+	Entity* player = new Player(3, 5, &p, 100);
 
-	Entity* player = new Entity(3, 5, &p);
-
-	Entity* enemy1 = new Entity(1, 3, &e1);
+	Entity* enemy1 = new Enemy(1, 3, &e1, 10);
 
 	while (window.isOpen())
 	{
@@ -108,9 +109,17 @@ int main(void)
 			player->move(0, p_speed);
 		}
 
+		// player가 enemy와 닿으면
+		if (player->get_sprite().getGlobalBounds().intersects(enemy1->get_sprite().getGlobalBounds()))
+		{
+			player->eat(enemy1);
+		}
+
+
 		window.clear();
 
-		window.draw(enemy1->get_sprite());
+		if (enemy1->get_life() > 0)
+			window.draw(enemy1->get_sprite());
 		window.draw(player->get_sprite());
 
 		window.display();
