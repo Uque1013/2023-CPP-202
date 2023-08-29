@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnakeGame", "SnakeGame\Snak
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance", "Inheritance\Inheritance.vcxproj", "{7E9593D0-67CB-499F-807A-E763563DA7B6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileSplit", "FileSplit\FileSplit.vcxproj", "{544DAA4E-71D0-4D22-BE64-E691FE0BD059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{7E9593D0-67CB-499F-807A-E763563DA7B6}.Release|x64.Build.0 = Release|x64
 		{7E9593D0-67CB-499F-807A-E763563DA7B6}.Release|x86.ActiveCfg = Release|Win32
 		{7E9593D0-67CB-499F-807A-E763563DA7B6}.Release|x86.Build.0 = Release|Win32
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Debug|x64.ActiveCfg = Debug|x64
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Debug|x64.Build.0 = Debug|x64
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Debug|x86.ActiveCfg = Debug|Win32
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Debug|x86.Build.0 = Debug|Win32
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Release|x64.ActiveCfg = Release|x64
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Release|x64.Build.0 = Release|x64
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Release|x86.ActiveCfg = Release|Win32
+		{544DAA4E-71D0-4D22-BE64-E691FE0BD059}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
