@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="문법\소스2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="문법\맵.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="문법\소스.cpp">
+    <ClCompile Include="문법\범위기반 for.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
