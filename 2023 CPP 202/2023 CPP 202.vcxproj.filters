@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="문법\범위기반 for.cpp">
+    <ClCompile Include="문법\static.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
